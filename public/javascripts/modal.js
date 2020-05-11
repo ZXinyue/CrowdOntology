@@ -101,16 +101,16 @@ $(function () {
     })
 
     $(document).on("click","#fa-plus-time",function(){
-        let html = '<span class="col-xs-6 vcenter" style="padding: 0px" ><input type="date" class="stigmod-input start-time"></span>'+
-            '<span class="col-xs-6 vcenter" style="padding: 0px" ><input type="date" class="stigmod-input end-time"></span>';
+        let html = '<span class="col-xs-6 vcenter" style="padding: 0px" ><input type="text" class="stigmod-input start-time"></span>'+
+            '<span class="col-xs-6 vcenter" style="padding: 0px" ><input type="text" class="stigmod-input end-time"></span>';
         $("#time-period2").append(html);
     })
 
     $(document).on("click","#timePeriodAdd",function(){
         let html = '<span class="col-xs-4 vcenter">开始</span>'+
-            '<span class="col-xs-8 vcenter" style="padding: 0px" ><input type="date" class="stigmod-input start-time"></span>'+
+            '<span class="col-xs-8 vcenter" style="padding: 0px" ><input type="text" class="stigmod-input start-time"></span>'+
             '<span class="col-xs-4 vcenter">结束</span>'+
-            '<span class="col-xs-8 vcenter" style="padding: 0px" ><input type="date" class="stigmod-input end-time"></span>';
+            '<span class="col-xs-8 vcenter" style="padding: 0px" ><input type="text" class="stigmod-input end-time"></span>';
         $("#time-period").append(html);
     })
 

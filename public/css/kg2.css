@@ -151,14 +151,14 @@ path.active{
 .right-content
 {
     min-height:600px;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 100px);
 }
 
 .index.list-group,
 .properties.list-group,
 .properties-revise.list-group{
     min-height:599px;
-    height: calc(100vh - 201px);
+    height: calc(100vh - 100px);
 }
 
 #modalAddRelInModel .panel:first-child{

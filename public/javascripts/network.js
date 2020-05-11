@@ -105,7 +105,12 @@ networkObj.prototype.getOptions = function () {
             color: {
                 color: '#337ab7',//#2e6da4
                 highlight: '#f0ad4e'//#eea236
-            }
+            },
+
+            font:{
+                    size:12,
+            },
+
         },
         groups: {},
         layout:{
@@ -211,8 +216,8 @@ networkObj.prototype.getModelData = function () {
         })
 
         for (let i in roles) {
-           //edges.push({from: id, to: roles[i].node_id, label:roles[i].rolename});
-            edges.push({from: id, to: roles[i].node_id});
+            edges.push({from: id, to: roles[i].node_id, label:roles[i].rolename});
+            //edges.push({from: id, to: roles[i].node_id});
         }
     }
 

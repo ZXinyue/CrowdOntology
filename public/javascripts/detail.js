@@ -59,7 +59,7 @@ detailObj.prototype.drawAttributes = function (id) {
     }
     $(properties).find("#attribute").append(html);
 
-    //$(properties).find("#attribute").append(this.generatePlusLogo("attribute"));
+    $(properties).find("#attribute").append(this.generatePlusLogo("attribute"));
 
 }
 
@@ -234,9 +234,9 @@ detailObj.prototype.relationRevise = function (item, type = "add") {
         '</div>' +
         '<div class="list-group-item stigmod-hovershow-trig row" id="time-period">'+
         '<span class="col-xs-4 vcenter">开始</span>'+
-        '<span class="col-xs-8 vcenter" style="padding: 0px" ><input type="date" class="stigmod-input start-time"></span>'+
+        '<span class="col-xs-8 vcenter" style="padding: 0px" ><input type="text" class="stigmod-input start-time"></span>'+
         '<span class="col-xs-4 vcenter">结束</span>'+
-        '<span class="col-xs-8 vcenter" style="padding: 0px" ><input type="date" class="stigmod-input end-time"></span>'+
+        '<span class="col-xs-8 vcenter" style="padding: 0px" ><input type="text" class="stigmod-input end-time"></span>'+
         '</div>'+
         '<div class="panel-heading" style="padding-top:5px;padding-bottom: 5px">' +
         '<div class="stigmod-rcmd-title row">' +
@@ -521,7 +521,7 @@ detailObj.prototype.relationReviseSubmit = function (item) {
 
     let type = $(item).find(".type-input").val();
     let referInfo = $(item).find(".refer-info").val();
-    //console.log("referInfo:",referInfo);
+    console.log("referInfo:",referInfo);
     let startTimes = $(item).find(".start-time");
     console.log("startTime:",startTimes);
     let endTimes = $(item).find(".end-time");
@@ -709,7 +709,7 @@ detailObj.prototype.generateContent = function (type, value, nodeId = "", relati
     if (type == undefined) type = "姓名";
     //alert(nodeId);
     //alert(relationId);
-    let referHtml = '<span style="color: #00B7FF">参考信息：' + referInfo + '</span>';
+    let referHtml = '<span style="color: #00B7FF">参考来源：&nbsp &nbsp' + referInfo + '</span>';
     let timeHtml = '';
     if (timeArray){
         for(var i=0;i<timeArray.length;i++){
@@ -719,19 +719,20 @@ detailObj.prototype.generateContent = function (type, value, nodeId = "", relati
         }
         for(var i=0;i<timeArray.length;i++){
             if(i%2 == 0){
-                let tmpHtml = '<span style="color:#f0ad4e">' + timeArray[i] + '  ~  ' + timeArray[i+1]+'</span></br>';
+                let j = i/2+1;
+                let tmpHtml = '<span style="color:#f0ad4e">' + '时间区间'+j+'： '+timeArray[i] + '  ~  ' + timeArray[i+1]+'</span></br>';
                 timeHtml += tmpHtml;
             }
         }
     }
-    let tailHtml = '<span class="pull-right stigmod-hovershow-cont">' +
-        '<span class="fa fa-edit"></span>' +
-        '</span></a>';
+    let tailHtml ='</a>';
     let headHtml = '<a href="#" class="list-group-item stigmod-hovershow-trig">' +
         '<span class="nodeId" value=' + nodeId + '></span>' +
         '<span class="relationId" value=' + relationId + '></span>' +
         '<span class="type" value=' + type + '>' + type + '</span>' + ' : ' +
-        '<span class="value" value=' + value + '>' + value + '</span></br>' ;
+        '<span class="value" value=' + value + '>' + value + '</span>'+'<span class="pull-right stigmod-hovershow-cont">' +
+        '<span class="fa fa-edit"></span>' +
+        '</span>'+'</br>' ;
     let html = headHtml;
     if(timeArray && referInfo){
         html+=timeHtml;

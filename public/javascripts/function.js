@@ -431,8 +431,10 @@ $(function () {
 
         let item = $(this).parent().parent();
 
+
         let type = $(item).find(".type").attr("value");
         let value = $(item).find(".value").attr("value");
+
 
         $(item).parent().find('.fa-plus').click();
         $(".properties-revise").find(".type-input").val(type);
@@ -799,8 +801,8 @@ $(function () {
         '</div>' +
         '</div>' +
         '<div class="list-group-item stigmod-hovershow-trig row" id="time-period2">'+
-        '<span class="col-xs-6 vcenter" style="padding: 0px" ><input type="date" class="stigmod-input start-time"></span>'+
-        '<span class="col-xs-6 vcenter" style="padding: 0px" ><input type="date" class="stigmod-input end-time"></span>'+
+        '<span class="col-xs-6 vcenter" style="padding: 0px" ><input type="text" class="stigmod-input start-time"></span>'+
+        '<span class="col-xs-6 vcenter" style="padding: 0px" ><input type="text" class="stigmod-input end-time"></span>'+
         '</div>'+
         '<a href="#" class="list-group-item stigmod-hovershow-trig" style="text-align: center">' +
         '<span class="col-xs-2 vcenter fa fa-plus" id="fa-plus-time"></span></a>'+
